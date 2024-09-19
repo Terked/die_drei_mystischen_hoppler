@@ -82,11 +82,6 @@ tw-link:hover, .visited:hover {
     color: grey;
 }
 
-/* Visited button styling */
-.visited {
-    color: grey; /* Grey out the text for visited links */
-}
-
 /* Sidebar link specific styling */
 tw-sidebar tw-link, tw-sidebar tw-link:hover {
     border: none;
@@ -148,8 +143,7 @@ tw-sidebar tw-link, tw-sidebar tw-link:hover {
 
 }
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Küche" tags="" position="1275,650" size="100,100">(if: $emerie_gefangen is false OR $nesta_gefangen is false OR $gwyn_gefangen is false)[
-Du betrittst die Küche, wo der Duft von frischer Vanille-Eiskrem noch immer in der Luft liegt. Theresa sitzt am Tisch und liest ein Buch, das einen leicht verruchten Charakter zu haben scheint. Sie kichert hin und wieder leise und schlägt eine Seite um, während du den Raum betrittst. Auf dem Herd köchelt etwas.(if:$visited_abstellhoehle is true)[Das leichte Klirren aus der Abstell-Höhle lässt dich vermuten, dass Amelie und Franci weiterhin ihr kreatives Chaos verbreiten.]]
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Küche" tags="" position="1275,650" size="100,100">(if: $emerie_gefangen is false OR $nesta_gefangen is false OR $gwyn_gefangen is false)[Du betrittst die Küche, wo der Duft von frischer Vanille-Eiskrem noch immer in der Luft liegt. Theresa sitzt am Tisch und liest ein Buch, das einen leicht verruchten Charakter zu haben scheint. Sie kichert hin und wieder leise und schlägt eine Seite um, während du den Raum betrittst. Auf dem Herd köchelt etwas.(if:$visited_abstellhoehle is true)[Das leichte Klirren aus der Abstell-Höhle lässt dich vermuten, dass Amelie und Franci weiterhin ihr kreatives Chaos verbreiten.]]
 (if: $nesta_gefangen is false AND $emerie_gefangen is false AND $gwyn_gefangen is false)[&lt;span class=&quot;dialogue&quot;&gt; Theresa (lächelnd): &quot;Oh, Simon. Noch kein Glück mit den Hasen? Du weißt, sie sind clever, aber ich vertraue darauf, dass du sie finden wirst.&quot;&lt;/span&gt;
 
 Sie legt das Buch beiseite und sieht dich mit einem liebevollen Blick an. Du spürst die Wärme des Raumes, doch ohne einen der Hasen hast du das Gefühl, dass noch einiges zu tun bleibt.
@@ -194,6 +188,14 @@ Theresa blickt dich liebevoll an und wartet geduldig auf deine nächste Bewegung
 
 [[Zur Abstell-Höhle|Abstellhöhle]]
 [[Zum Wohnzimmer|Wohnzimmer]]]
+(if: $nesta_gefangen is false AND $emerie_gefangen is true AND $gwyn_gefangen is true)[&lt;span class=&quot;dialogue&quot;&gt; Theresa (nickend): &quot;Du hast Gwyn und Emerie gefunden? Sehr gut! Aber Nesta ist noch irgendwo da draußen...&quot;&lt;/span&gt;
+
+Gwyn sitzt zufrieden neben der Schale Karotten, während Emerie immer noch ab und zu aus dem Fenster schaut. Die beiden scheinen sich mit ihrer Lage abgefunden zu haben, doch der Raum fühlt sich noch unvollständig an.
+
+Theresa blickt dich liebevoll an und wartet geduldig auf deine nächste Bewegung.
+
+[[Zur Abstell-Höhle|Abstellhöhle]]
+[[Zum Wohnzimmer|Wohnzimmer]]]
 (if: $nesta_gefangen is true AND $emerie_gefangen is false AND $gwyn_gefangen is true)[ &lt;span class=&quot;dialogue&quot;&gt;Theresa (lächelnd): &quot;Du hast Gwyn und Nesta gefangen, aber Emerie fehlt noch. Pass auf, dass sie dir keinen Streich spielt!&quot;&lt;/span&gt;
 
 Gwyn liegt gemütlich auf einem Kissen, ihre Schmusemagie ist jetzt unter Kontrolle. Neben ihr knabbert Nesta zufrieden an einer Karotte. Die beiden wirken zufrieden, aber Emeries Abwesenheit hinterlässt eine spürbare Lücke.
@@ -202,7 +204,9 @@ Gwyn liegt gemütlich auf einem Kissen, ihre Schmusemagie ist jetzt unter Kontro
 
 [[Zur Abstell-Höhle|Abstellhöhle]]
 [[Zum Wohnzimmer|Wohnzimmer]]]
-(if: $emerie_gefangen is true AND $nesta_gefangen is true AND $gwyn_gefangen is true)[Die Küche ist erfüllt von einem Gefühl der Vollendung und des Glücks. Die Luft duftet nach Vanille-Eiskrem, und die Sonne scheint warm durch die Fenster. Der Raum ist voller Leben – alle, die du auf deinem Abenteuer getroffen hast, haben sich hier versammelt.
+(if: $emerie_gefangen is true AND $nesta_gefangen is true AND $gwyn_gefangen is true AND $visited_abstellhoehle is false)[Als du in der Küche ankommst, hörst du aufgeregtes Kichern und Bimmeln aus der Abstell-Höhle... 
+[[Zur Abstell-Höhle|Abstellhöhle]]]
+(if: $emerie_gefangen is true AND $nesta_gefangen is true AND $gwyn_gefangen is true AND $visited_abstellhoehle is true)[Die Küche ist erfüllt von einem Gefühl der Vollendung und des Glücks. Die Luft duftet nach Vanille-Eiskrem, und die Sonne scheint warm durch die Fenster. Der Raum ist voller Leben – alle, die du auf deinem Abenteuer getroffen hast, haben sich hier versammelt.
 
 Am Tisch sitzt Theresa, strahlend und zufrieden, ihr Buch liegt offen vor ihr, während sie die fröhliche Stimmung genießt. Nesta, Gwyn und Emerie haben ihre Plätze eingenommen: Nesta knabbert an einer Karotte, Gwyn räkelt sich schnurrend auf einem weichen Kissen, und Emerie sitzt immer noch rebellisch auf der Fensterbank, aber man kann sehen, dass sie ebenfalls in bester Laune ist.
 
@@ -218,7 +222,7 @@ Es ist ein perfekter Moment. Alles ist an seinem Platz, und das Abenteuer ist nu
 
 &lt;span class=&quot;dialogue-soft&quot;&gt;Stefan:(text-style:&quot;fade-in-out&quot;)[&quot;Achja, und alles Gute zum Geburtstag, Simon!&quot;] &lt;/span&gt;
 
-(text-style:&quot;bold&quot;,&quot;expand&quot;)[(align:&quot;=&gt;&lt;=&quot;)[ENDE]]]</tw-passagedata><tw-passagedata pid="2" name="Eingangsbereich" tags="" position="1600,525" size="100,100">Du befindest dich (if:visits is &gt; 1)[wieder] im Erdgeschoss des alten Landhauses, die warme Atmosphäre und der vertraute Duft nach frischem Brot und Kräutern lässt dich einen Moment innehalten. Vor dir erstreckt sich der große Eingangsbereich mit Zugang zu mehreren Räumen.
+(text-style:&quot;bold&quot;,&quot;expand&quot;)[(align:&quot;=&gt;&lt;=&quot;)[ENDE]]]</tw-passagedata><tw-passagedata pid="2" name="Eingangsbereich" tags="" position="1625,575" size="100,100">Du befindest dich (if:visits is &gt; 1)[wieder] im Erdgeschoss des alten Landhauses, die warme Atmosphäre und der vertraute Duft nach frischem Brot und Kräutern lässt dich einen Moment innehalten. Vor dir erstreckt sich der große Eingangsbereich mit Zugang zu mehreren Räumen.
 
 Der Eingangsbereich des Hauses ist groß, mit dunklem Holz und einem alten Spiegel, der seit Jahrhunderten an der Wand hängt. Die Wände schimmern leicht, als ob der Raum von einem sanften magischen Licht erleuchtet wird. (if:visits is 1)[Plötzlich bemerkt du einen kleinen schwarzen Hasen, der zwischen den Schatten über den Boden huscht.
 
@@ -227,7 +231,8 @@ Sie hüpft schnell von einer Ecke zur anderen, um sich hinter einem Stapel alter
 &lt;span class=&quot;dialogue&quot;&gt;Simon (Du): &quot;Hey! Bleib stehen!&quot;&lt;/span&gt;
 
 Doch sie reagiert nicht. Stattdessen bemerkst du, dass der Raum sich langsam zu verändern beginnt. Die Schatten werden länger, die Möbel rücken näher, als ob das Haus selbst versucht, dich zu verwirren.]
-(if:visits &gt;= 2 AND $nesta_gefangen is false)[Der Raum scheint sich langsam zu verändern. Die Schatten werden länger, die Möbel rücken näher, als ob das Haus selbst versucht, dich zu verwirren.]
+(if: $emerie_gefangen is true AND $nesta_gefangen is true AND $gwyn_gefangen is true)[Endlich hast du alle Hasen gefunden! [[Ab in die Küche!|Küche]]]
+(if: $emerie_gefangen is false or $nesta_gefangen is false or $gwyn_gefangen is false)[(if:visits &gt;= 2 AND $nesta_gefangen is false)[Der Raum scheint sich langsam zu verändern. Die Schatten werden länger, die Möbel rücken näher, als ob das Haus selbst versucht, dich zu verwirren.]
 (if:$nesta_gefangen is true)[Nach deiner Reise durch die Spielgewelt scheint der Raum wieder seine eigene Ruhe gefunden zu haben.]
 (if:visits is 1)[[[Gleich hinterher!|NestaHinterher]]]
 (if:visits is 1)[[Erstmal Umsehen|UmsehenEingangsbereich]]
@@ -235,7 +240,7 @@ Doch sie reagiert nicht. Stattdessen bemerkst du, dass der Raum sich langsam zu 
 (if:visits &gt;= 2)[[Zum Wohnzimmer|Wohnzimmer]]
 (if:visits &gt;= 2)[[Zur Garage|Garage]]
 (if:visits &gt;= 2)[[Zum Bad|Bad]]
-(if:visits &gt;= 2)[[Treppe hoch|TreppeHoch]]
+(if:visits &gt;= 2)[[Treppe hoch|TreppeHoch]]]
 
 </tw-passagedata><tw-passagedata pid="3" name="NestaHinterher" tags="" position="1575,725" size="100,100">Du springst nach vorne, deine Hände greifen ins Leere. Die Häsin hüpft frech über deine Arme und huscht an dir vorbei in den nächsten Raum.
 
@@ -469,7 +474,7 @@ Du verlässt das Bad, während Kathy und Patrick sich weiter auf ihre „Expedit
 
 Du siehst dich verwundert um. Es gibt keine Anzeichen dafür, dass hier jemals eine maritime Expedition stattgefunden hat.]
 
-[[Zurück zum Eingang|Eingangsbereich]]</tw-passagedata><tw-passagedata pid="17" name="TreppeHoch" tags="" position="1450,500" size="100,100">Du stehst am Fuß der Treppe, die ins erste Stockwerk führt. Die hölzernen Stufen knarren leicht unter deinen Schritten, während das sanfte Licht der alten Kronleuchter die Wände mit warmen Tönen erfüllt.
+[[Zurück zum Eingang|Eingangsbereich]]</tw-passagedata><tw-passagedata pid="17" name="TreppeHoch" tags="" position="1450,525" size="100,100">Du stehst am Fuß der Treppe, die ins erste Stockwerk führt. Die hölzernen Stufen knarren leicht unter deinen Schritten, während das sanfte Licht der alten Kronleuchter die Wände mit warmen Tönen erfüllt.
 
 Als du die Treppe hinaufsteigst, öffnet sich vor dir ein Flur mit vier Türen, jede führt in einen anderen Raum: Tess&#39; Arbeitszimmer, dein eigenes Arbeitszimmer, das kleine Bad und das Schlafzimmer. Jeder Raum scheint eine eigene Atmosphäre auszustrahlen, fast als würde das Haus selbst atmen.
 
@@ -561,7 +566,7 @@ Gwyn hüpft leichtfüßig um dich herum.
 Du nimmst sie behutsam auf den Arm und spürst, wie der Schmusebann endgültig nachlässt.
 
 [[Zurück zum Flur|TreppeHoch]]
-(set: $gwyn_gefangen to true)</tw-passagedata><tw-passagedata pid="27" name="Start" tags="" position="1675,300" size="100,100">(align:&quot;&lt;==&gt;&quot;)[(text-style:&quot;bold&quot;)[&quot;Die Drei Mystischen Hoppler&quot;]]
+(set: $gwyn_gefangen to true)</tw-passagedata><tw-passagedata pid="27" name="Start" tags="" position="1675,275" size="100,100">(align:&quot;&lt;==&gt;&quot;)[(text-style:&quot;bold&quot;)[&quot;Die Drei Mystischen Hoppler&quot;]]
 ---
 [Du stehst in der Küche, der süße Duft von frischer Vanille-Eiskrem liegt in der Luft. Du rührst gerade die dicke, cremige und vegane Eiskremmasse an, als Theresa, Vorsitzende Feehase der Spiegelau, in die Küche tritt. Ihr blondes Haar tanzt in der Luft, als ob es von einem unsichtbaren Wind umspielt wird, ihre hasenartigen Ohren zucken aufmerksam.]
 
